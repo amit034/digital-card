@@ -1,0 +1,196 @@
+/* ===== SHARE MODAL ===== */
+.share-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.share-modal-content {
+  background: var(--bg-secondary);
+  padding: 32px;
+  border-radius: var(--radius-xl);
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  border: var(--border-subtle);
+  animation: scaleIn 0.3s ease-out;
+}
+
+.close-modal {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-modal:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+}
+
+.share-modal-content h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+}
+
+.share-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.share-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 8px;
+  border-radius: var(--radius-lg);
+  transition: var(--transition-normal);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.share-option:hover {
+  transform: translateY(-4px);
+}
+
+.share-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-normal);
+}
+
+.share-icon i {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.share-option span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Share option colors */
+.share-option.whatsapp .share-icon {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+}
+
+.share-option.sms .share-icon {
+  background: linear-gradient(135deg, #34b7f1 0%, #0088cc 100%);
+}
+
+.share-option.email .share-icon {
+  background: linear-gradient(135deg, #ea4335 0%, #c23321 100%);
+}
+
+.share-option.facebook .share-icon {
+  background: linear-gradient(135deg, #1877f2 0%, #0d5bc1 100%);
+}
+
+.share-option:hover .share-icon {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Copy Link */
+.copy-link {
+  display: flex;
+  gap: 10px;
+}
+
+.copy-link input {
+  flex: 1;
+  padding: 14px 16px;
+  background: var(--bg-primary);
+  border: var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--text-secondary);
+  direction: ltr;
+  text-align: left;
+  transition: var(--transition-fast);
+}
+
+.copy-link input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.copy-link button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.copy-link button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.copy-link button.copied {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+}
+
+@media (max-width: 480px) {
+  .share-modal-content {
+    padding: 24px;
+  }
+  
+  .share-options {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .copy-link {
+    flex-direction: column;
+  }
+  
+  .copy-link button {
+    justify-content: center;
+  }
+}

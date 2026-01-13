@@ -1,0 +1,65 @@
+/* ===== NAME SECTION ===== */
+.name-section {
+  text-align: center;
+  margin-bottom: 32px;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.person-name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.person-title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.name-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out 0.8s forwards;
+}
+
+.deco-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--accent-primary) 50%, 
+    transparent 100%
+  );
+}
+
+.deco-diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-primary);
+  transform: rotate(45deg);
+}
+
+@media (max-width: 480px) {
+  .person-name {
+    font-size: 2rem;
+  }
+  
+  .person-title {
+    font-size: 1rem;
+  }
+  
+  .deco-line {
+    width: 40px;
+  }
+}

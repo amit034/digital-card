@@ -1,0 +1,67 @@
+/* ===== SAVE CONTACT BUTTON ===== */
+.save-contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 48px;
+  padding: 16px 32px;
+  border-radius: var(--radius-full);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-primary);
+  border: none;
+  color: white;
+  animation: fadeInUp 0.8s ease-out 1s both;
+  transition: var(--transition-normal);
+}
+
+.save-contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 10px 40px rgba(129, 140, 248, 0.4),
+    0 0 0 1px rgba(129, 140, 248, 0.2);
+}
+
+.save-contact-btn:active {
+  transform: translateY(-1px);
+}
+
+.btn-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 70%
+  );
+  animation: shimmer 3s infinite;
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.save-contact-btn i {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 480px) {
+  .save-contact-btn {
+    max-width: 100%;
+    padding: 14px 24px;
+    font-size: 1rem;
+  }
+}
