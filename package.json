@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://amitr.github.io/digital-card",
+  "homepage": "https://amit034.github.io/digital-card",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
