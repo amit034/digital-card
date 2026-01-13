@@ -36,7 +36,7 @@ const BASE_URL = 'https://amit034.github.io/digital-card'
 function generateMetaTags(card) {
   const fullTitle = `${card.name} | ${card.title} • ${card.company}`
   const imageUrl = `${BASE_URL}/${card.image}`
-  const pageUrl = `${BASE_URL}/${card.slug}/`
+  const pageUrl = `${BASE_URL}/cards/${card.slug}/`
   
   return `
     <!-- Dynamic Meta Tags for ${card.name} -->
@@ -107,16 +107,16 @@ async function main() {
   
   const templateHtml = fs.readFileSync(indexPath, 'utf-8')
   
-  // Generate page for each card
+  // Generate page for each card inside cards/ folder
   for (const card of cards) {
-    const cardDir = path.join(distDir, card.slug)
+    const cardDir = path.join(distDir, 'cards', card.slug)
     fs.mkdirSync(cardDir, { recursive: true })
     
     const html = generateHtml(card, templateHtml)
     const outputPath = path.join(cardDir, 'index.html')
     fs.writeFileSync(outputPath, html)
     
-    console.log(`✅ Created: ${card.slug}/index.html - ${card.name}`)
+    console.log(`✅ Created: cards/${card.slug}/index.html - ${card.name}`)
   }
   
   console.log('\n🎉 Done! Each card now has its own page with unique meta tags.')
