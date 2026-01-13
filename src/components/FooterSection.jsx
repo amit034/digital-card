@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/assets'
 import './FooterSection.css'
 
 function FooterSection({ gallery, footer }) {
@@ -21,7 +22,7 @@ function FooterSection({ gallery, footer }) {
           <div className="gallery-container">
             {gallery.map((image, index) => (
               <div key={index} className="gallery-item" style={{ animationDelay: `${1.5 + index * 0.1}s` }}>
-                <img src={image} alt={`Gallery ${index + 1}`} loading="lazy" />
+                <img src={getAssetUrl(image)} alt={`Gallery ${index + 1}`} loading="lazy" />
                 <div className="gallery-overlay">
                   <i className="fas fa-expand"></i>
                 </div>

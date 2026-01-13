@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/assets'
 import './ProfileSection.css'
 
 function ProfileSection({ profileImage }) {
@@ -8,7 +9,7 @@ function ProfileSection({ profileImage }) {
         <div className="profile-ring profile-ring-1"></div>
         <div className="profile-ring profile-ring-2"></div>
         <div className="profile-image-wrapper">
-          <img src={profileImage} alt="Profile" className="profile-image" />
+          <img src={getAssetUrl(profileImage)} alt="Profile" className="profile-image" />
         </div>
         <div className="profile-badge">
           <i className="fas fa-check"></i>

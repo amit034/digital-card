@@ -1,10 +1,11 @@
+import { getAssetUrl } from '../utils/assets'
 import './HeroSection.css'
 
 function HeroSection({ heroImage }) {
   return (
     <div className="hero-section">
       <div className="hero-background">
-        <img src={heroImage} alt="Background" className="hero-bg-img" />
+        <img src={getAssetUrl(heroImage)} alt="Background" className="hero-bg-img" />
         <div className="hero-overlay"></div>
         <div className="hero-particles">
           {[...Array(20)].map((_, i) => (

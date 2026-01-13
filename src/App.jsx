@@ -12,6 +12,7 @@ import FooterSection from './components/FooterSection'
 import ShareButton from './components/ShareButton'
 import ShareModal from './components/ShareModal'
 import { getCard, defaultCard, getAllCards } from './cards'
+import { getAssetUrl } from './utils/assets'
 import './App.css'
 
 // Card component that displays the card based on cardData
@@ -96,7 +97,7 @@ function HomePage() {
                 className="team-card"
               >
                 <div className="team-card-image">
-                  <img src={card.profileImage} alt={card.name} />
+                  <img src={getAssetUrl(card.profileImage)} alt={card.name} />
                 </div>
                 <div className="team-card-info">
                   <h3>{card.name}</h3>

@@ -2,7 +2,15 @@
  * Digital Card - יעל אמור
  * ===========================
  * Edit this file to customize the digital business card.
+ * 
+ * Images are stored in: public/cards/yael-amor/
+ *   - profile.png  (profile photo)
+ *   - hero.png     (header background)
+ *   - gallery/     (gallery images)
  */
+
+// Base path for this card's assets
+const BASE_PATH = 'cards/yael-amor'
 
 const cardData = {
   // ===== ROUTE SLUG =====
@@ -19,9 +27,9 @@ const cardData = {
   website: 'https://delta-ins.co.il',
   whatsapp: '9720526407620',
   
-  // ===== IMAGES =====
-  profileImage: 'https://www.licard.co.il/upload/imgupload/656dc4c4e064a.png',
-  heroImage: 'https://www.licard.co.il/upload/imgupload/655f238a8e32c.png',
+  // ===== IMAGES (relative to public folder) =====
+  profileImage: `${BASE_PATH}/profile.png`,
+  heroImage: `${BASE_PATH}/hero.png`,
   
   // ===== ADDRESS =====
   address: {
@@ -61,10 +69,10 @@ const cardData = {
   
   // ===== GALLERY IMAGES =====
   gallery: [
-    'https://www.licard.co.il/upload/imgupload2/656747ab8653e.jpg',
-    'https://www.licard.co.il/upload/imgupload2/656747ab86694.jpg',
-    'https://www.licard.co.il/upload/imgupload2/656726ec6a3d0.jpg',
-    'https://www.licard.co.il/upload/imgupload2/656726ec6a4c1.jpg'
+    `${BASE_PATH}/gallery/gallery-1.jpg`,
+    `${BASE_PATH}/gallery/gallery-2.jpg`,
+    `${BASE_PATH}/gallery/gallery-3.jpg`,
+    `${BASE_PATH}/gallery/gallery-4.jpg`
   ],
   
   // ===== FOOTER SECTION =====
