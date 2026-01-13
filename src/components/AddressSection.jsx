@@ -12,7 +12,7 @@ function AddressSection({ address, wazeLink, title = 'כתובתנו', buttonLab
           <p>{address.street}, {address.city}</p>
           <p className="address-details">{address.details}</p>
           <a href={wazeLink} target="_blank" rel="noopener noreferrer" className="waze-link">
-            <img src="https://www.waze.com/favicon.ico" alt="Waze" className="waze-icon" />
+            <i className="fab fa-waze waze-icon"></i>
             <span>{buttonLabel}</span>
             <i className="fas fa-external-link-alt"></i>
           </a>
