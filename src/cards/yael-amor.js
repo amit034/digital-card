@@ -3,14 +3,17 @@
  * ===========================
  * Edit this file to customize the digital business card.
  * 
- * Images are stored in: public/cards/yael-amor/
- *   - profile.png  (profile photo)
- *   - hero.png     (header background)
- *   - gallery/     (gallery images)
+ * Personal images: public/cards/yael-amor/
+ *   - profile.png (profile photo)
+ * 
+ * Shared images: public/cards/shared/
+ *   - delta-hero.png (header background)
+ *   - office-team.jpg, consultation.jpg, etc. (gallery)
  */
 
-// Base path for this card's assets
-const BASE_PATH = 'cards/yael-amor'
+// Paths for assets
+const PROFILE_PATH = 'cards/yael-amor'
+const SHARED_PATH = 'cards/shared'
 
 const cardData = {
   // ===== ROUTE SLUG =====
@@ -27,9 +30,9 @@ const cardData = {
   website: 'https://delta-ins.co.il',
   whatsapp: '9720526407620',
   
-  // ===== IMAGES (relative to public folder) =====
-  profileImage: `${BASE_PATH}/profile.png`,
-  heroImage: `${BASE_PATH}/hero.png`,
+  // ===== IMAGES =====
+  profileImage: `${PROFILE_PATH}/profile.png`,
+  heroImage: `${SHARED_PATH}/delta-hero.png`,
   
   // ===== ADDRESS =====
   address: {
@@ -67,12 +70,12 @@ const cardData = {
     'האם הכסף המנוהל שלכם מותאם לצרכים הפנסיוניים שלכם?'
   ],
   
-  // ===== GALLERY IMAGES =====
+  // ===== GALLERY IMAGES (shared) =====
   gallery: [
-    `${BASE_PATH}/gallery/gallery-1.jpg`,
-    `${BASE_PATH}/gallery/gallery-2.jpg`,
-    `${BASE_PATH}/gallery/gallery-3.jpg`,
-    `${BASE_PATH}/gallery/gallery-4.jpg`
+    `${SHARED_PATH}/office-team.jpg`,
+    `${SHARED_PATH}/consultation.jpg`,
+    `${SHARED_PATH}/meeting-room.jpg`,
+    `${SHARED_PATH}/workspace.jpg`
   ],
   
   // ===== FOOTER SECTION =====
