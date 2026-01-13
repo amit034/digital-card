@@ -28,7 +28,7 @@ const cardData = {
   office: '03-6542333',
   email: 'yaela@delta-ins.co.il',
   website: 'https://delta-ins.co.il',
-  whatsapp: '9720526407620',
+  whatsapp: '9720528238675',
   
   // ===== IMAGES =====
   profileImage: `${PROFILE_PATH}/profile.png`,
