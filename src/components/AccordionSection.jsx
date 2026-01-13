@@ -3,6 +3,7 @@ import './AccordionSection.css'
 
 function AccordionSection({ contact }) {
   const [activeIndex, setActiveIndex] = useState(null)
+  const titles = contact.accordionTitles || {}
 
   const toggleAccordion = (index) => {
     setActiveIndex(activeIndex === index ? null : index)
@@ -10,7 +11,7 @@ function AccordionSection({ contact }) {
 
   const accordionItems = [
     {
-      title: 'פרטי התקשרות ושעות פעילות',
+      title: titles.contact || 'פרטי התקשרות ושעות פעילות',
       icon: 'fas fa-phone-alt',
       content: (
         <div className="contact-details">
@@ -31,7 +32,7 @@ function AccordionSection({ contact }) {
       )
     },
     {
-      title: 'ההתמחות שלי',
+      title: titles.expertise || 'ההתמחות שלי',
       icon: 'fas fa-briefcase',
       content: (
         <ul className="skills-list">
@@ -45,7 +46,7 @@ function AccordionSection({ contact }) {
       )
     },
     {
-      title: 'תשאלו את עצמכם...',
+      title: titles.questions || 'תשאלו את עצמכם...',
       icon: 'fas fa-lightbulb',
       content: (
         <ul className="questions-list">

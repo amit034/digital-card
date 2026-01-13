@@ -1,13 +1,13 @@
 import './AboutSection.css'
 
-function AboutSection({ about }) {
+function AboutSection({ about, title = 'קצת עלי' }) {
   return (
     <div className="about-section">
       <h3 className="section-title">
         <span className="title-icon">
           <i className="fas fa-user"></i>
         </span>
-        קצת עלי
+        {title}
       </h3>
       <div className="about-content">
         {about.map((paragraph, index) => (

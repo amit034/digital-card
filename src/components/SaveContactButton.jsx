@@ -24,12 +24,14 @@ END:VCARD`
     URL.revokeObjectURL(url)
   }
 
+  const label = contact.buttons?.saveContact || 'שמירת איש קשר'
+
   return (
     <button className="save-contact-btn" onClick={downloadVCard}>
       <span className="btn-glow"></span>
       <span className="btn-content">
         <i className="fas fa-address-card"></i>
-        <span>שמירת איש קשר</span>
+        <span>{label}</span>
       </span>
     </button>
   )

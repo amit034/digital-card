@@ -1,22 +1,24 @@
 import './ActionButtons.css'
 
 function ActionButtons({ contact }) {
+  const buttons = contact.buttons || {}
+  
   const actions = [
     {
       icon: 'fas fa-phone',
-      label: 'שיחה',
+      label: buttons.call || 'שיחה',
       onClick: () => window.location.href = `tel:${contact.phone.replace(/-/g, '')}`,
       delay: 0.4
     },
     {
       icon: 'fas fa-envelope',
-      label: 'מייל',
+      label: buttons.email || 'מייל',
       onClick: () => window.location.href = `mailto:${contact.email}`,
       delay: 0.5
     },
     {
       icon: 'fab fa-whatsapp',
-      label: 'וואטסאפ',
+      label: buttons.whatsapp || 'וואטסאפ',
       onClick: () => window.open(`https://wa.me/${contact.whatsapp}`, '_blank'),
       filled: true,
       highlight: true,
@@ -24,19 +26,19 @@ function ActionButtons({ contact }) {
     },
     {
       icon: 'fas fa-building',
-      label: 'משרד',
+      label: buttons.office || 'משרד',
       onClick: () => window.location.href = `tel:${contact.office.replace(/-/g, '')}`,
       delay: 0.7
     },
     {
       icon: 'fas fa-globe',
-      label: 'אתר',
+      label: buttons.website || 'אתר',
       onClick: () => window.open(contact.website, '_blank'),
       delay: 0.8
     },
     {
       icon: 'fas fa-location-dot',
-      label: 'ניווט',
+      label: buttons.navigate || 'ניווט',
       onClick: () => window.open(contact.wazeLink, '_blank'),
       delay: 0.9
     }

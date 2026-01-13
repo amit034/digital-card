@@ -1,6 +1,8 @@
 import './FooterSection.css'
 
-function FooterSection({ gallery }) {
+function FooterSection({ gallery, footer }) {
+  const footerData = footer || { badge: 'תיכנון פיננסי ופנסיוני', title: 'דלתא' }
+  
   return (
     <div className="footer-section">
       <div className="footer-wave">
@@ -11,8 +13,8 @@ function FooterSection({ gallery }) {
       
       <div className="footer-content">
         <div className="footer-title">
-          <span className="footer-badge">תיכנון פיננסי ופנסיוני</span>
-          <h3>דלתא</h3>
+          <span className="footer-badge">{footerData.badge}</span>
+          <h3>{footerData.title}</h3>
         </div>
 
         <div className="gallery-section">
