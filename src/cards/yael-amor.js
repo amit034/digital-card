@@ -24,9 +24,9 @@ const cardData = {
   title: 'דלתא - בית לתכנון פיננסי',
   
   // ===== CONTACT DETAILS =====
-  phone: '052-6407620',
+  phone: '052-8238675',
   office: '03-6542333',
-  email: 'yael@delta-ins.co.il',
+  email: 'yaela@delta-ins.co.il',
   website: 'https://delta-ins.co.il',
   whatsapp: '9720526407620',
   
