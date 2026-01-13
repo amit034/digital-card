@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useParams, Navigate, Link } from 'react-router-dom'
 import HeroSection from './components/HeroSection'
 import ProfileSection from './components/ProfileSection'
 import NameSection from './components/NameSection'
@@ -10,10 +11,11 @@ import AddressSection from './components/AddressSection'
 import FooterSection from './components/FooterSection'
 import ShareButton from './components/ShareButton'
 import ShareModal from './components/ShareModal'
-import cardData from './cardData'
+import { getCard, defaultCard, getAllCards } from './cards'
 import './App.css'
 
-function App() {
+// Card component that displays the card based on cardData
+function CardView({ cardData }) {
   const [isShareModalOpen, setIsShareModalOpen] = useState(false)
 
   return (
@@ -57,4 +59,57 @@ function App() {
   )
 }
 
-export default App
+// Dynamic card loader based on URL slug
+function DynamicCard() {
+  const { slug } = useParams()
+  const cardData = getCard(slug)
+
+  if (!cardData) {
+    return <Navigate to={`/${defaultCard.slug}`} replace />
+  }
+
+  return <CardView cardData={cardData} />
+}
+
+// Home page - shows card directory or redirects to default
+function HomePage() {
+  const cards = getAllCards()
+  
+  return (
+    <div className="app">
+      <div className="home-container">
+        <div className="home-header">
+          <div className="home-logo">
+            <span className="logo-icon">△</span>
+            <h1>דלתא</h1>
+            <p>בית לתכנון פיננסי</p>
+          </div>
+        </div>
+        
+        <div className="cards-grid">
+          <h2>הצוות שלנו</h2>
+          <div className="team-cards">
+            {cards.map((card) => (
+              <Link 
+                key={card.slug} 
+                to={`/${card.slug}`}
+                className="team-card"
+              >
+                <div className="team-card-image">
+                  <img src={card.profileImage} alt={card.name} />
+                </div>
+                <div className="team-card-info">
+                  <h3>{card.name}</h3>
+                  <p>{card.title}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export { DynamicCard, HomePage, CardView }
+export default DynamicCard
