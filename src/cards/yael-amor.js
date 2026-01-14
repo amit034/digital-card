@@ -86,28 +86,28 @@ const cardData = {
   
   // ===== ACCORDION SECTION TITLES =====
   accordionTitles: {
-    contact: 'פרטי התקשרות ושעות פעילות',
-    expertise: 'ההתמחות שלי',
-    questions: 'תשאלו את עצמכם...'
+    contact: 'יצירת קשר ושעות פעילות',
+    expertise: 'תחומי התמחות',
+    questions: 'שאלות לחשיבה'
   },
   
   // ===== SECTION TITLES =====
   sectionTitles: {
-    about: 'קצת עלי',
-    address: 'כתובתנו'
+    about: 'אז מי אני',
+    address: 'המשרד שלנו'
   },
   
   // ===== BUTTON LABELS =====
   buttons: {
-    call: 'שיחה',
-    email: 'מייל',
-    whatsapp: 'וואטסאפ',
-    office: 'משרד',
-    website: 'אתר',
-    navigate: 'ניווט',
-    saveContact: 'שמירת איש קשר',
-    share: 'שיתוף הכרטיס',
-    wazeNavigate: 'נווט עם Waze'
+    call: 'התקשרו',
+    email: 'אימייל',
+    whatsapp: 'WhatsApp',
+    office: 'טלפון משרד',
+    website: 'לאתר',
+    navigate: 'מפה',
+    saveContact: 'הוספה לאנשי קשר',
+    share: 'שתפו',
+    wazeNavigate: 'פתח ב-Waze'
   }
 }
 

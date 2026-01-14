@@ -22,17 +22,17 @@ function ShareModal({ isOpen, onClose }) {
 
   const shareWhatsApp = () => {
     const url = encodeURIComponent(cardUrl)
-    const text = encodeURIComponent('בדקו את הכרטיס הדיגיטלי שלי:')
+    const text = encodeURIComponent('הנה הכרטיס שלי:')
     window.open(`https://wa.me/?text=${text}%20${url}`, '_blank')
   }
 
   const shareSMS = () => {
-    window.location.href = `sms:?body=בדקו את הכרטיס הדיגיטלי שלי: ${cardUrl}`
+    window.location.href = `sms:?body=הנה הכרטיס שלי: ${cardUrl}`
   }
 
   const shareEmail = () => {
-    const subject = encodeURIComponent('כרטיס ביקור דיגיטלי')
-    const body = encodeURIComponent(`בדקו את הכרטיס הדיגיטלי שלי: ${cardUrl}`)
+    const subject = encodeURIComponent('הכרטיס שלי')
+    const body = encodeURIComponent(`שלום, הנה הכרטיס שלי: ${cardUrl}`)
     window.location.href = `mailto:?subject=${subject}&body=${body}`
   }
 
@@ -74,14 +74,14 @@ function ShareModal({ isOpen, onClose }) {
           <i className="fas fa-times"></i>
         </button>
         
-        <h3>שיתוף הכרטיס</h3>
+        <h3>שתפו את הכרטיס</h3>
         
         <div className="share-options">
           <button onClick={shareWhatsApp} className="share-option whatsapp">
             <div className="share-icon">
               <i className="fab fa-whatsapp"></i>
             </div>
-            <span>וואטסאפ</span>
+            <span>WhatsApp</span>
           </button>
           
           <button onClick={shareSMS} className="share-option sms">
