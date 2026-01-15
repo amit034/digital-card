@@ -83,7 +83,7 @@ function ShareModal({ isOpen, onClose, shareUrl }) {
           <div className="qr-code-wrapper">
             <QRCodeSVG 
               value={cardUrl}
-              size={160}
+              size={140}
               level="M"
               bgColor="transparent"
               fgColor="#1e293b"

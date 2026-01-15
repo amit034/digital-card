@@ -6,7 +6,7 @@
   gap: 10px;
   width: calc(100% - 48px);
   max-width: 300px;
-  margin: 0 auto 32px;
+  margin: 32px auto;
   padding: 16px 32px;
   background: var(--bg-secondary);
   color: var(--text-primary);
