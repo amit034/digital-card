@@ -6,12 +6,10 @@
  */
 
 import yaelAmor from './yael-amor'
-import batElSne from './bat-el-sne'
 
 // Register all cards by their slug
 const cards = {
   'yael-amor': yaelAmor,
-  'bat-el-sne': batElSne,
 }
 
 // Get card by slug
@@ -24,6 +22,6 @@ export const getAllCards = () => Object.values(cards)
 export const getAllSlugs = () => Object.keys(cards)
 
 // Default card (first one or specify)
-export const defaultCard = batElSne
+export const defaultCard = yaelAmor
 
 export default cards
