@@ -73,16 +73,7 @@ function generateHtml(card, templateHtml) {
     `<meta name="theme-color" content="#0f172a" />${metaTags}`
   )
   
-  // Add script to redirect to hash route
-  const redirectScript = `
-    <script>
-      // Redirect to hash route for this person
-      if (!window.location.hash) {
-        window.location.hash = '/${card.slug}';
-      }
-    </script>
-  `
-  html = html.replace('</head>', `${redirectScript}</head>`)
+  // No redirect script needed - React app detects the path automatically
   
   return html
 }
