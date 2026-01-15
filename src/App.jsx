@@ -19,6 +19,10 @@ import './App.css'
 function CardView({ cardData }) {
   const [isShareModalOpen, setIsShareModalOpen] = useState(false)
 
+  // Build the static share URL (for social media with meta tags)
+  const baseUrl = 'https://amit034.github.io/digital-card'
+  const shareUrl = `${baseUrl}/cards/${cardData.slug}/`
+
   return (
     <div className="app">
       <div className="card-container">
@@ -54,7 +58,8 @@ function CardView({ cardData }) {
 
       <ShareModal 
         isOpen={isShareModalOpen} 
-        onClose={() => setIsShareModalOpen(false)} 
+        onClose={() => setIsShareModalOpen(false)}
+        shareUrl={shareUrl}
       />
     </div>
   )

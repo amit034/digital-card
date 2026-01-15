@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react'
+import { QRCodeSVG } from 'qrcode.react'
 import './ShareModal.css'
 
-function ShareModal({ isOpen, onClose }) {
+function ShareModal({ isOpen, onClose, shareUrl }) {
   const [cardUrl, setCardUrl] = useState('')
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
-    setCardUrl(window.location.href)
-  }, [])
+    // Use the static share URL for QR code (better for social media)
+    // Fall back to current URL if not provided
+    setCardUrl(shareUrl || window.location.href)
+  }, [shareUrl])
 
   useEffect(() => {
     if (isOpen) {
@@ -76,6 +79,19 @@ function ShareModal({ isOpen, onClose }) {
         
         <h3>שתפו את הכרטיס</h3>
         
+        <div className="qr-code-section">
+          <div className="qr-code-wrapper">
+            <QRCodeSVG 
+              value={cardUrl}
+              size={160}
+              level="M"
+              bgColor="transparent"
+              fgColor="#1e293b"
+            />
+          </div>
+          <p className="qr-hint">סרקו לשיתוף מהיר</p>
+        </div>
+
         <div className="share-options">
           <button onClick={shareWhatsApp} className="share-option whatsapp">
             <div className="share-icon">
