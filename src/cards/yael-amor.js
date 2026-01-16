@@ -101,7 +101,7 @@ const cardData = {
     email: 'אימייל',
     whatsapp: 'WhatsApp',
     schedule: 'פגישה',
-    office: 'משרד',
+    office: 'טלפון משרד',
     website: 'לאתר',
     navigate: 'מפה',
     saveContact: 'הוספה לאנשי קשר',
