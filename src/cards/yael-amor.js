@@ -21,6 +21,8 @@ const cardData = {
   
   // ===== PERSONAL INFO =====
   name: 'יעל אמור',
+  jobTitle: 'מתכננת פיננסית ופנסיונית',
+  company: 'דלתא - בית לתכנון פיננסי',
   title: 'דלתא - בית לתכנון פיננסי',
   
   // ===== CONTACT DETAILS =====
