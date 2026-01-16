@@ -20,35 +20,31 @@ function ActionButtons({ contact, onScheduleClick }) {
       icon: 'fab fa-whatsapp',
       label: buttons.whatsapp || 'וואטסאפ',
       onClick: () => window.open(`https://wa.me/${contact.whatsapp}`, '_blank'),
-      filled: true,
-      highlight: true,
       delay: 0.6
     },
     {
       icon: 'fas fa-calendar-check',
       label: buttons.schedule || 'פגישה',
       onClick: onScheduleClick,
-      filled: true,
-      schedule: true,
       delay: 0.65
-    },
-    {
-      icon: 'fas fa-building',
-      label: buttons.office || 'משרד',
-      onClick: () => window.location.href = `tel:${contact.office.replace(/-/g, '')}`,
-      delay: 0.7
     },
     {
       icon: 'fas fa-globe',
       label: buttons.website || 'אתר',
       onClick: () => window.open(contact.website, '_blank'),
-      delay: 0.8
+      delay: 0.7
+    },
+    {
+      icon: 'fas fa-building',
+      label: buttons.office || 'משרד',
+      onClick: () => window.location.href = `tel:${contact.office.replace(/-/g, '')}`,
+      delay: 0.75
     },
     {
       icon: 'fas fa-location-dot',
       label: buttons.navigate || 'ניווט',
       onClick: () => window.open(contact.wazeLink, '_blank'),
-      delay: 0.9
+      delay: 0.8
     }
   ]
 
@@ -57,11 +53,11 @@ function ActionButtons({ contact, onScheduleClick }) {
       {actions.map((action, index) => (
         <button
           key={index}
-          className={`action-btn ${action.highlight ? 'highlight' : ''} ${action.schedule ? 'schedule' : ''}`}
+          className="action-btn"
           onClick={action.onClick}
           style={{ animationDelay: `${action.delay}s` }}
         >
-          <div className={`action-icon ${action.filled ? 'filled' : ''}`}>
+          <div className="action-icon">
             <i className={action.icon}></i>
           </div>
           <span className="action-label">{action.label}</span>
