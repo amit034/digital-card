@@ -5,7 +5,6 @@ function SaveContactButton({ contact }) {
     const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:${contact.name}
-ORG:${contact.company || contact.title}
 TITLE:${contact.jobTitle || ''}
 TEL;TYPE=CELL:${contact.phone}
 TEL;TYPE=WORK:${contact.office}
