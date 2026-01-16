@@ -9,7 +9,6 @@ TITLE:${contact.jobTitle || ''}
 TEL;TYPE=CELL:${contact.phone}
 TEL;TYPE=WORK:${contact.office}
 EMAIL:${contact.email}
-URL:${contact.website}
 ADR;TYPE=WORK:;;${contact.address.street};${contact.address.city};;;ישראל
 END:VCARD`
 
