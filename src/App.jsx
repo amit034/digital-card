@@ -5,12 +5,14 @@ import ProfileSection from './components/ProfileSection'
 import NameSection from './components/NameSection'
 import ActionButtons from './components/ActionButtons'
 import SaveContactButton from './components/SaveContactButton'
+import ScheduleButton from './components/ScheduleButton'
 import AboutSection from './components/AboutSection'
 import AccordionSection from './components/AccordionSection'
 import AddressSection from './components/AddressSection'
 import FooterSection from './components/FooterSection'
 import ShareButton from './components/ShareButton'
 import ShareModal from './components/ShareModal'
+import ContactForm from './components/ContactForm'
 import { getCard, defaultCard, getAllCards } from './cards'
 import { getAssetUrl } from './utils/assets'
 import './App.css'
@@ -18,6 +20,7 @@ import './App.css'
 // Card component that displays the card based on cardData
 function CardView({ cardData }) {
   const [isShareModalOpen, setIsShareModalOpen] = useState(false)
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false)
 
   // Build the static share URL (for social media with meta tags)
   const baseUrl = 'https://amit034.github.io/digital-card'
@@ -33,6 +36,10 @@ function CardView({ cardData }) {
           <NameSection name={cardData.name} title={cardData.title} />
           <ActionButtons contact={cardData} />
           <SaveContactButton contact={cardData} />
+          <ScheduleButton 
+            onClick={() => setIsContactFormOpen(true)}
+            label={cardData.buttons.scheduleMeeting}
+          />
           <AboutSection 
             about={cardData.about} 
             title={cardData.sectionTitles.about} 
@@ -61,6 +68,13 @@ function CardView({ cardData }) {
         onClose={() => setIsShareModalOpen(false)}
         shareUrl={shareUrl}
       />
+
+      {isContactFormOpen && (
+        <ContactForm 
+          onClose={() => setIsContactFormOpen(false)}
+          recipientEmail={cardData.email}
+        />
+      )}
     </div>
   )
 }

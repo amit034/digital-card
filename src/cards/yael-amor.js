@@ -104,6 +104,7 @@ const cardData = {
     website: 'לאתר',
     navigate: 'מפה',
     saveContact: 'הוספה לאנשי קשר',
+    scheduleMeeting: 'תיאום פגישת ייעוץ',
     share: 'שתפו',
     wazeNavigate: 'פתח ב-Waze'
   }
