@@ -1,6 +1,6 @@
 import './ActionButtons.css'
 
-function ActionButtons({ contact }) {
+function ActionButtons({ contact, onScheduleClick }) {
   const buttons = contact.buttons || {}
   
   const actions = [
@@ -23,6 +23,14 @@ function ActionButtons({ contact }) {
       filled: true,
       highlight: true,
       delay: 0.6
+    },
+    {
+      icon: 'fas fa-calendar-check',
+      label: buttons.schedule || 'פגישה',
+      onClick: onScheduleClick,
+      filled: true,
+      schedule: true,
+      delay: 0.65
     },
     {
       icon: 'fas fa-building',
@@ -49,7 +57,7 @@ function ActionButtons({ contact }) {
       {actions.map((action, index) => (
         <button
           key={index}
-          className={`action-btn ${action.highlight ? 'highlight' : ''}`}
+          className={`action-btn ${action.highlight ? 'highlight' : ''} ${action.schedule ? 'schedule' : ''}`}
           onClick={action.onClick}
           style={{ animationDelay: `${action.delay}s` }}
         >

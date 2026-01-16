@@ -100,11 +100,11 @@ const cardData = {
     call: 'התקשרו',
     email: 'אימייל',
     whatsapp: 'WhatsApp',
-    office: 'טלפון משרד',
+    schedule: 'פגישה',
+    office: 'משרד',
     website: 'לאתר',
     navigate: 'מפה',
     saveContact: 'הוספה לאנשי קשר',
-    scheduleMeeting: 'תיאום פגישת ייעוץ',
     share: 'שתפו',
     wazeNavigate: 'פתח ב-Waze'
   }

@@ -93,6 +93,29 @@
   animation: glow-pulse 2s ease-in-out infinite;
 }
 
+/* Schedule button - green theme */
+.action-btn.schedule .action-icon.filled {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+}
+
+.action-btn.schedule:hover .action-icon::before {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+}
+
+.action-btn.schedule .action-icon {
+  animation: schedule-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes schedule-pulse {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(34, 197, 94, 0.6);
+  }
+}
+
 .action-label {
   font-size: 0.85rem;
   color: var(--text-secondary);

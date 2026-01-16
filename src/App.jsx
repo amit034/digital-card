@@ -5,7 +5,6 @@ import ProfileSection from './components/ProfileSection'
 import NameSection from './components/NameSection'
 import ActionButtons from './components/ActionButtons'
 import SaveContactButton from './components/SaveContactButton'
-import ScheduleButton from './components/ScheduleButton'
 import AboutSection from './components/AboutSection'
 import AccordionSection from './components/AccordionSection'
 import AddressSection from './components/AddressSection'
@@ -34,12 +33,11 @@ function CardView({ cardData }) {
         
         <div className="content-section">
           <NameSection name={cardData.name} title={cardData.title} />
-          <ActionButtons contact={cardData} />
-          <SaveContactButton contact={cardData} />
-          <ScheduleButton 
-            onClick={() => setIsContactFormOpen(true)}
-            label={cardData.buttons.scheduleMeeting}
+          <ActionButtons 
+            contact={cardData} 
+            onScheduleClick={() => setIsContactFormOpen(true)}
           />
+          <SaveContactButton contact={cardData} />
           <AboutSection 
             about={cardData.about} 
             title={cardData.sectionTitles.about} 
