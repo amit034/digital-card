@@ -1,71 +1,80 @@
 import './ActionButtons.css'
 
 function ActionButtons({ contact, onScheduleClick }) {
-  const buttons = contact.buttons || {}
+  const labels = contact.buttons || {}
   
-  const actions = [
-    // Row 1: call, whatsapp, meeting, email
+  const quickActions = [
     {
+      id: 'call',
       icon: 'fas fa-phone',
-      label: buttons.call || 'שיחה',
-      onClick: () => window.location.href = `tel:${contact.phone.replace(/-/g, '')}`,
-      delay: 0.4
+      text: labels.call || 'שיחה',
+      action: () => window.location.href = `tel:${contact.phone.replace(/-/g, '')}`,
+      order: 1
     },
     {
+      id: 'whatsapp',
       icon: 'fab fa-whatsapp',
-      label: buttons.whatsapp || 'וואטסאפ',
-      onClick: () => window.open(`https://wa.me/${contact.whatsapp}`, '_blank'),
-      delay: 0.5
+      text: labels.whatsapp || 'וואטסאפ',
+      action: () => window.open(`https://wa.me/${contact.whatsapp}`, '_blank'),
+      order: 2
     },
     {
+      id: 'meeting',
       icon: 'fas fa-calendar-check',
-      label: buttons.schedule || 'פגישה',
-      onClick: onScheduleClick,
-      delay: 0.6
+      text: labels.schedule || 'פגישה',
+      action: onScheduleClick,
+      order: 3
     },
     {
+      id: 'email',
       icon: 'fas fa-envelope',
-      label: buttons.email || 'מייל',
-      onClick: () => window.location.href = `mailto:${contact.email}`,
-      delay: 0.65
+      text: labels.email || 'מייל',
+      action: () => window.location.href = `mailto:${contact.email}`,
+      order: 4
     },
-    // Row 2: map, office, website
     {
+      id: 'navigate',
       icon: 'fas fa-location-dot',
-      label: buttons.navigate || 'ניווט',
-      onClick: () => window.open(contact.wazeLink, '_blank'),
-      delay: 0.7
+      text: labels.navigate || 'ניווט',
+      action: () => window.open(contact.wazeLink, '_blank'),
+      order: 5
     },
     {
+      id: 'office',
       icon: 'fas fa-building',
-      label: buttons.office || 'משרד',
-      onClick: () => window.location.href = `tel:${contact.office.replace(/-/g, '')}`,
-      delay: 0.75
+      text: labels.office || 'משרד',
+      action: () => window.location.href = `tel:${contact.office.replace(/-/g, '')}`,
+      order: 6
     },
     {
+      id: 'website',
       icon: 'fas fa-globe',
-      label: buttons.website || 'אתר',
-      onClick: () => window.open(contact.website, '_blank'),
-      delay: 0.8
+      text: labels.website || 'אתר',
+      action: () => window.open(contact.website, '_blank'),
+      order: 7
     }
   ]
 
   return (
-    <div className="action-buttons">
-      {actions.map((action, index) => (
-        <button
-          key={index}
-          className="action-btn"
-          onClick={action.onClick}
-          style={{ animationDelay: `${action.delay}s` }}
-        >
-          <div className="action-icon">
-            <i className={action.icon}></i>
-          </div>
-          <span className="action-label">{action.label}</span>
-        </button>
-      ))}
-    </div>
+    <nav className="dc-quicklinks" aria-label="Quick actions">
+      <ul className="dc-quicklinks__grid" role="list">
+        {quickActions.map((item) => (
+          <li key={item.id} className="dc-quicklinks__item" style={{ '--item-order': item.order }}>
+            <button
+              type="button"
+              className={`dc-quicklinks__trigger dc-quicklinks__trigger--${item.id}`}
+              onClick={item.action}
+              aria-label={item.text}
+            >
+              <span className="dc-quicklinks__icon" aria-hidden="true">
+                <i className={item.icon}></i>
+              </span>
+              <span className="dc-quicklinks__text">{item.text}</span>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </nav>
   )
 }
 

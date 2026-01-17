@@ -1,11 +1,16 @@
-/* ===== SAVE CONTACT BUTTON ===== */
-.save-contact-btn {
+/* ===== DC-CTA (Save Contact) ===== */
+.dc-cta {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.dc-cta__button {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   max-width: 300px;
-  margin: 0 auto 48px;
   padding: 16px 32px;
   border-radius: var(--radius-full);
   font-size: 1.1rem;
@@ -20,18 +25,18 @@
   transition: var(--transition-normal);
 }
 
-.save-contact-btn:hover {
+.dc-cta__button:hover {
   transform: translateY(-3px);
   box-shadow: 
     0 10px 40px rgba(129, 140, 248, 0.4),
     0 0 0 1px rgba(129, 140, 248, 0.2);
 }
 
-.save-contact-btn:active {
+.dc-cta__button:active {
   transform: translateY(-1px);
 }
 
-.btn-glow {
+.dc-cta__shine {
   position: absolute;
   top: -50%;
   left: -50%;
@@ -46,7 +51,7 @@
   animation: shimmer 3s infinite;
 }
 
-.btn-content {
+.dc-cta__inner {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -54,12 +59,16 @@
   z-index: 1;
 }
 
-.save-contact-btn i {
+.dc-cta__inner i {
   font-size: 1.2rem;
 }
 
+.dc-cta__label {
+  font-weight: 600;
+}
+
 @media (max-width: 480px) {
-  .save-contact-btn {
+  .dc-cta__button {
     max-width: 100%;
     padding: 14px 24px;
     font-size: 1rem;

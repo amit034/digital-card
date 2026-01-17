@@ -1,12 +1,18 @@
-/* ===== SHARE BUTTON ===== */
-.share-btn {
+/* ===== DC-SHARE (Share Button) ===== */
+.dc-share {
+  display: flex;
+  justify-content: center;
+  margin: 32px auto;
+  padding: 0 24px;
+}
+
+.dc-share__trigger {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: calc(100% - 48px);
+  width: 100%;
   max-width: 300px;
-  margin: 32px auto;
   padding: 16px 32px;
   background: var(--bg-secondary);
   color: var(--text-primary);
@@ -18,25 +24,34 @@
   transition: var(--transition-normal);
 }
 
-.share-btn:hover {
+.dc-share__trigger:hover {
   background: var(--bg-card);
   border-color: var(--accent-primary);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
-.share-btn:active {
+.dc-share__trigger:active {
   transform: translateY(0);
 }
 
-.share-btn i {
+.dc-share__trigger i {
   font-size: 1.1rem;
   color: var(--accent-primary);
 }
 
+.dc-share__text {
+  font-weight: 600;
+}
+
 @media (max-width: 480px) {
-  .share-btn {
-    width: calc(100% - 32px);
+  .dc-share {
+    padding: 0 16px;
+  }
+  
+  .dc-share__trigger {
+    width: 100%;
+    max-width: none;
     padding: 14px 24px;
     font-size: 0.95rem;
   }

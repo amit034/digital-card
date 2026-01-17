@@ -1,5 +1,5 @@
-/* ===== PROFILE SECTION ===== */
-.profile-section {
+/* ===== DC-AVATAR (Profile) ===== */
+.dc-avatar {
   position: relative;
   z-index: 20;
   margin-top: -100px;
@@ -8,12 +8,12 @@
   padding: 0 20px;
 }
 
-.profile-image-container {
+.dc-avatar__frame {
   position: relative;
-  animation: profileSlideIn 1s var(--transition-bounce);
+  animation: dc-avatar-enter 1s var(--transition-bounce);
 }
 
-.profile-glow {
+.dc-avatar__glow {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -27,36 +27,34 @@
   animation: glow-pulse 3s ease-in-out infinite;
 }
 
-.profile-ring {
+.dc-avatar__orbit {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 2px solid;
-  border-image: var(--gradient-primary) 1;
 }
 
-.profile-ring-1 {
+.dc-avatar__orbit--primary {
   width: 190px;
   height: 190px;
   border: 2px solid rgba(129, 140, 248, 0.4);
-  animation: spin 20s linear infinite;
+  animation: dc-orbit 20s linear infinite;
 }
 
-.profile-ring-2 {
+.dc-avatar__orbit--secondary {
   width: 210px;
   height: 210px;
   border: 2px dashed rgba(192, 132, 252, 0.3);
-  animation: spin 30s linear infinite reverse;
+  animation: dc-orbit 30s linear infinite reverse;
 }
 
-@keyframes spin {
+@keyframes dc-orbit {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-.profile-image-wrapper {
+.dc-avatar__photo {
   width: 170px;
   height: 170px;
   border-radius: 50%;
@@ -67,7 +65,7 @@
   z-index: 2;
 }
 
-.profile-image {
+.dc-avatar__photo img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -75,7 +73,7 @@
   border: 4px solid var(--bg-primary);
 }
 
-.profile-badge {
+.dc-avatar__verified {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -88,24 +86,20 @@
   justify-content: center;
   border: 3px solid var(--bg-primary);
   z-index: 3;
-  animation: badgePop 0.5s var(--transition-bounce) 0.8s both;
+  animation: dc-badge-pop 0.5s var(--transition-bounce) 0.8s both;
 }
 
-.profile-badge i {
+.dc-avatar__verified i {
   color: white;
   font-size: 14px;
 }
 
-@keyframes badgePop {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
+@keyframes dc-badge-pop {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
 }
 
-@keyframes profileSlideIn {
+@keyframes dc-avatar-enter {
   0% {
     opacity: 0;
     transform: translateY(-50px) scale(0.8);
@@ -117,26 +111,26 @@
 }
 
 @media (max-width: 480px) {
-  .profile-section {
+  .dc-avatar {
     margin-top: -80px;
   }
   
-  .profile-image-wrapper {
+  .dc-avatar__photo {
     width: 150px;
     height: 150px;
   }
   
-  .profile-glow {
+  .dc-avatar__glow {
     width: 170px;
     height: 170px;
   }
   
-  .profile-ring-1 {
+  .dc-avatar__orbit--primary {
     width: 170px;
     height: 170px;
   }
   
-  .profile-ring-2 {
+  .dc-avatar__orbit--secondary {
     width: 190px;
     height: 190px;
   }

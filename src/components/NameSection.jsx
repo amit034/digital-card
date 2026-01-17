@@ -2,15 +2,15 @@ import './NameSection.css'
 
 function NameSection({ name, title }) {
   return (
-    <div className="name-section">
-      <h1 className="person-name">{name}</h1>
-      <h2 className="person-title">{title}</h2>
-      <div className="name-decoration">
-        <span className="deco-line"></span>
-        <span className="deco-diamond"></span>
-        <span className="deco-line"></span>
+    <hgroup className="dc-identity">
+      <h1 className="dc-identity__name">{name}</h1>
+      <p className="dc-identity__role">{title}</p>
+      <div className="dc-identity__separator" aria-hidden="true">
+        <span className="dc-identity__line"></span>
+        <span className="dc-identity__symbol"></span>
+        <span className="dc-identity__line"></span>
       </div>
-    </div>
+    </hgroup>
   )
 }
 

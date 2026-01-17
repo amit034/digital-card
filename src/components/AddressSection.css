@@ -1,10 +1,10 @@
-/* ===== ADDRESS SECTION ===== */
-.address-section {
+/* ===== DC-LOCATION (Address) ===== */
+.dc-location {
   margin-bottom: 0;
   animation: fadeInUp 0.8s ease-out 1.3s both;
 }
 
-.address-card {
+.dc-location__card {
   display: flex;
   gap: 20px;
   padding: 24px;
@@ -14,12 +14,12 @@
   transition: var(--transition-normal);
 }
 
-.address-card:hover {
+.dc-location__card:hover {
   border-color: rgba(129, 140, 248, 0.3);
   box-shadow: 0 0 30px rgba(129, 140, 248, 0.1);
 }
 
-.address-icon {
+.dc-location__marker {
   width: 56px;
   height: 56px;
   background: var(--gradient-primary);
@@ -30,33 +30,35 @@
   flex-shrink: 0;
 }
 
-.address-icon i {
+.dc-location__marker i {
   color: white;
   font-size: 1.4rem;
 }
 
-.address-content {
+.dc-location__info {
   flex: 1;
+  font-style: normal;
 }
 
-.address-content h4 {
+.dc-location__heading {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 8px;
 }
 
-.address-content p {
+.dc-location__street {
   color: var(--text-secondary);
   margin-bottom: 4px;
 }
 
-.address-details {
+.dc-location__extra {
   font-size: 0.9rem;
+  color: var(--text-secondary);
   opacity: 0.8;
 }
 
-.waze-link {
+.dc-location__navigate {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -70,33 +72,33 @@
   transition: var(--transition-normal);
 }
 
-.waze-link:hover {
+.dc-location__navigate:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(51, 204, 255, 0.3);
 }
 
-.waze-icon {
+.dc-location__navigate .fa-waze {
   font-size: 1.2rem;
 }
 
-.waze-link i {
+.dc-location__navigate .fa-external-link-alt {
   font-size: 0.75rem;
   opacity: 0.8;
 }
 
 @media (max-width: 480px) {
-  .address-card {
+  .dc-location__card {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
   
-  .address-icon {
+  .dc-location__marker {
     width: 64px;
     height: 64px;
   }
   
-  .address-icon i {
+  .dc-location__marker i {
     font-size: 1.6rem;
   }
 }

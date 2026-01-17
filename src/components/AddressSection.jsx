@@ -2,23 +2,28 @@ import './AddressSection.css'
 
 function AddressSection({ address, wazeLink, title = 'כתובתנו', buttonLabel = 'נווט עם Waze' }) {
   return (
-    <div className="address-section">
-      <div className="address-card">
-        <div className="address-icon">
+    <aside className="dc-location">
+      <div className="dc-location__card">
+        <span className="dc-location__marker" aria-hidden="true">
           <i className="fas fa-map-marker-alt"></i>
-        </div>
-        <div className="address-content">
-          <h4>{title}</h4>
-          <p>{address.street}, {address.city}</p>
-          <p className="address-details">{address.details}</p>
-          <a href={wazeLink} target="_blank" rel="noopener noreferrer" className="waze-link">
-            <i className="fab fa-waze waze-icon"></i>
+        </span>
+        <address className="dc-location__info">
+          <h3 className="dc-location__heading">{title}</h3>
+          <p className="dc-location__street">{address.street}, {address.city}</p>
+          <p className="dc-location__extra">{address.details}</p>
+          <a 
+            href={wazeLink} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="dc-location__navigate"
+          >
+            <i className="fab fa-waze" aria-hidden="true"></i>
             <span>{buttonLabel}</span>
-            <i className="fas fa-external-link-alt"></i>
+            <i className="fas fa-external-link-alt" aria-hidden="true"></i>
           </a>
-        </div>
+        </address>
       </div>
-    </div>
+    </aside>
   )
 }
 

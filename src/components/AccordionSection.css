@@ -1,10 +1,10 @@
-/* ===== ACCORDION SECTION ===== */
-.accordion-section {
+/* ===== DC-PANELS (Accordion) ===== */
+.dc-panels {
   margin-bottom: 40px;
   animation: fadeInUp 0.8s ease-out 1.2s both;
 }
 
-.accordion-item {
+.dc-panels__item {
   background: var(--gradient-glass);
   border: var(--border-subtle);
   border-radius: var(--radius-lg);
@@ -13,16 +13,16 @@
   transition: var(--transition-normal);
 }
 
-.accordion-item:hover {
+.dc-panels__item:hover {
   border-color: rgba(129, 140, 248, 0.3);
 }
 
-.accordion-item.active {
+.dc-panels__item--expanded {
   border-color: var(--accent-primary);
   box-shadow: 0 0 20px rgba(129, 140, 248, 0.15);
 }
 
-.accordion-header {
+.dc-panels__toggle {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -36,11 +36,11 @@
   text-align: right;
 }
 
-.accordion-header:hover {
+.dc-panels__toggle:hover {
   background: rgba(129, 140, 248, 0.05);
 }
 
-.accordion-icon {
+.dc-panels__icon {
   width: 40px;
   height: 40px;
   background: rgba(129, 140, 248, 0.15);
@@ -52,27 +52,27 @@
   transition: var(--transition-normal);
 }
 
-.accordion-item.active .accordion-icon {
+.dc-panels__item--expanded .dc-panels__icon {
   background: var(--gradient-primary);
 }
 
-.accordion-icon i {
+.dc-panels__icon i {
   color: var(--accent-primary);
   font-size: 1rem;
   transition: var(--transition-normal);
 }
 
-.accordion-item.active .accordion-icon i {
+.dc-panels__item--expanded .dc-panels__icon i {
   color: white;
 }
 
-.accordion-title {
+.dc-panels__heading {
   flex: 1;
   font-size: 1.05rem;
   font-weight: 600;
 }
 
-.accordion-arrow {
+.dc-panels__chevron {
   width: 32px;
   height: 32px;
   display: flex;
@@ -83,59 +83,71 @@
   transition: var(--transition-normal);
 }
 
-.accordion-arrow i {
+.dc-panels__chevron i {
   color: var(--accent-primary);
   font-size: 0.85rem;
   transition: transform var(--transition-normal);
 }
 
-.accordion-item.active .accordion-arrow {
+.dc-panels__item--expanded .dc-panels__chevron {
   background: var(--accent-primary);
 }
 
-.accordion-item.active .accordion-arrow i {
+.dc-panels__item--expanded .dc-panels__chevron i {
   color: white;
   transform: rotate(-90deg);
 }
 
-.accordion-content {
+.dc-panels__content {
   max-height: 0;
   overflow: hidden;
   transition: max-height var(--transition-slow);
 }
 
-.accordion-inner {
+.dc-panels__body {
   padding: 0 20px 20px;
 }
 
-/* Contact Details */
-.contact-details {
+/* Panel Contact Details */
+.dc-panel__contact {
   color: var(--text-secondary);
 }
 
-.contact-name {
+.dc-panel__name {
   font-size: 1.1rem;
   margin-bottom: 16px;
   color: var(--text-primary);
 }
 
-.contact-info p {
-  margin-bottom: 10px;
-  display: flex;
-  gap: 8px;
+.dc-panel__details {
+  margin: 0;
 }
 
-.contact-info a {
+.dc-panel__row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.dc-panel__row dt {
+  font-weight: 600;
+}
+
+.dc-panel__row dd {
+  margin: 0;
+}
+
+.dc-panel__row a {
   color: var(--accent-primary);
   font-weight: 500;
 }
 
-.contact-info a:hover {
+.dc-panel__row a:hover {
   color: var(--accent-secondary);
   text-decoration: underline;
 }
 
-.working-hours {
+.dc-panel__hours {
   margin-top: 20px;
   padding: 16px;
   background: rgba(129, 140, 248, 0.1);
@@ -145,7 +157,7 @@
   gap: 16px;
 }
 
-.hours-icon {
+.dc-panel__clock {
   width: 44px;
   height: 44px;
   background: var(--gradient-primary);
@@ -156,19 +168,22 @@
   flex-shrink: 0;
 }
 
-.hours-icon i {
+.dc-panel__clock i {
   color: white;
   font-size: 1.1rem;
 }
 
-/* Skills List */
-.skills-list {
+/* Panel Skills */
+.dc-panel__skills {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.skills-list li {
+.dc-panel__skill {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -179,12 +194,12 @@
   transition: var(--transition-fast);
 }
 
-.skills-list li:hover {
+.dc-panel__skill:hover {
   background: rgba(129, 140, 248, 0.1);
   color: var(--text-primary);
 }
 
-.skill-bullet {
+.dc-panel__bullet {
   width: 8px;
   height: 8px;
   background: var(--gradient-primary);
@@ -192,8 +207,14 @@
   flex-shrink: 0;
 }
 
-/* Questions List */
-.questions-list li {
+/* Panel Questions */
+.dc-panel__questions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dc-panel__question {
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -202,11 +223,11 @@
   color: var(--text-secondary);
 }
 
-.questions-list li:last-child {
+.dc-panel__question:last-child {
   border-bottom: none;
 }
 
-.question-icon {
+.dc-panel__qmark {
   width: 28px;
   height: 28px;
   display: flex;
@@ -215,31 +236,31 @@
   flex-shrink: 0;
 }
 
-.question-icon i {
+.dc-panel__qmark i {
   color: var(--accent-secondary);
   font-size: 1.1rem;
 }
 
 @media (max-width: 480px) {
-  .accordion-header {
+  .dc-panels__toggle {
     padding: 14px 16px;
     gap: 10px;
   }
   
-  .accordion-icon {
+  .dc-panels__icon {
     width: 36px;
     height: 36px;
   }
   
-  .accordion-title {
+  .dc-panels__heading {
     font-size: 0.95rem;
   }
   
-  .skills-list {
+  .dc-panel__skills {
     grid-template-columns: 1fr;
   }
   
-  .accordion-inner {
+  .dc-panels__body {
     padding: 0 16px 16px;
   }
 }

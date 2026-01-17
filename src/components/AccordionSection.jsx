@@ -2,29 +2,39 @@ import { useState } from 'react'
 import './AccordionSection.css'
 
 function AccordionSection({ contact }) {
-  const [activeIndex, setActiveIndex] = useState(null)
-  const titles = contact.accordionTitles || {}
+  const [expandedId, setExpandedId] = useState(null)
+  const labels = contact.accordionTitles || {}
 
-  const toggleAccordion = (index) => {
-    setActiveIndex(activeIndex === index ? null : index)
+  const handleToggle = (id) => {
+    setExpandedId(expandedId === id ? null : id)
   }
 
-  const accordionItems = [
+  const panels = [
     {
-      title: titles.contact || 'פרטי התקשרות ושעות פעילות',
-      icon: 'fas fa-phone-alt',
-      content: (
-        <div className="contact-details">
-          <p className="contact-name"><strong>{contact.name}</strong> | פנסיוני ופיננסי</p>
-          <div className="contact-info">
-            <p><strong>נייד:</strong> <a href={`tel:${contact.phone.replace(/-/g, '')}`}>{contact.phone}</a></p>
-            <p><strong>משרד:</strong> <a href={`tel:${contact.office.replace(/-/g, '')}`}>{contact.office}</a></p>
-            <p><strong>אימייל:</strong> <a href={`mailto:${contact.email}`}>{contact.email}</a></p>
-          </div>
-          <div className="working-hours">
-            <div className="hours-icon"><i className="fas fa-clock"></i></div>
+      id: 'contact-info',
+      heading: labels.contact || 'פרטי התקשרות ושעות פעילות',
+      iconClass: 'fas fa-phone-alt',
+      body: (
+        <div className="dc-panel__contact">
+          <p className="dc-panel__name"><strong>{contact.name}</strong> | פנסיוני ופיננסי</p>
+          <dl className="dc-panel__details">
+            <div className="dc-panel__row">
+              <dt>נייד:</dt>
+              <dd><a href={`tel:${contact.phone.replace(/-/g, '')}`}>{contact.phone}</a></dd>
+            </div>
+            <div className="dc-panel__row">
+              <dt>משרד:</dt>
+              <dd><a href={`tel:${contact.office.replace(/-/g, '')}`}>{contact.office}</a></dd>
+            </div>
+            <div className="dc-panel__row">
+              <dt>אימייל:</dt>
+              <dd><a href={`mailto:${contact.email}`}>{contact.email}</a></dd>
+            </div>
+          </dl>
+          <div className="dc-panel__hours">
+            <span className="dc-panel__clock" aria-hidden="true"><i className="fas fa-clock"></i></span>
             <div>
-              <p><strong>שעות פעילות</strong></p>
+              <strong>שעות פעילות</strong>
               <p>{contact.workingHours}</p>
             </div>
           </div>
@@ -32,13 +42,14 @@ function AccordionSection({ contact }) {
       )
     },
     {
-      title: titles.expertise || 'ההתמחות שלי',
-      icon: 'fas fa-briefcase',
-      content: (
-        <ul className="skills-list">
+      id: 'expertise',
+      heading: labels.expertise || 'ההתמחות שלי',
+      iconClass: 'fas fa-briefcase',
+      body: (
+        <ul className="dc-panel__skills" role="list">
           {contact.skills.map((skill, index) => (
-            <li key={index}>
-              <span className="skill-bullet"></span>
+            <li key={index} className="dc-panel__skill">
+              <span className="dc-panel__bullet" aria-hidden="true"></span>
               {skill}
             </li>
           ))}
@@ -46,13 +57,14 @@ function AccordionSection({ contact }) {
       )
     },
     {
-      title: titles.questions || 'תשאלו את עצמכם...',
-      icon: 'fas fa-lightbulb',
-      content: (
-        <ul className="questions-list">
+      id: 'questions',
+      heading: labels.questions || 'תשאלו את עצמכם...',
+      iconClass: 'fas fa-lightbulb',
+      body: (
+        <ul className="dc-panel__questions" role="list">
           {contact.questions.map((question, index) => (
-            <li key={index}>
-              <span className="question-icon"><i className="fas fa-question-circle"></i></span>
+            <li key={index} className="dc-panel__question">
+              <span className="dc-panel__qmark" aria-hidden="true"><i className="fas fa-question-circle"></i></span>
               {question}
             </li>
           ))}
@@ -62,38 +74,46 @@ function AccordionSection({ contact }) {
   ]
 
   return (
-    <div className="accordion-section">
-      {accordionItems.map((item, index) => (
-        <div 
-          key={index} 
-          className={`accordion-item ${activeIndex === index ? 'active' : ''}`}
-        >
-          <button 
-            className="accordion-header"
-            onClick={() => toggleAccordion(index)}
-            aria-expanded={activeIndex === index}
+    <section className="dc-panels" aria-label="Additional information">
+      {panels.map((panel) => {
+        const isOpen = expandedId === panel.id
+        return (
+          <article 
+            key={panel.id} 
+            className={`dc-panels__item ${isOpen ? 'dc-panels__item--expanded' : ''}`}
           >
-            <span className="accordion-icon">
-              <i className={item.icon}></i>
-            </span>
-            <span className="accordion-title">{item.title}</span>
-            <span className="accordion-arrow">
-              <i className="fas fa-chevron-left"></i>
-            </span>
-          </button>
-          <div 
-            className="accordion-content"
-            style={{
-              maxHeight: activeIndex === index ? '500px' : '0'
-            }}
-          >
-            <div className="accordion-inner">
-              {item.content}
+            <button 
+              type="button"
+              className="dc-panels__toggle"
+              onClick={() => handleToggle(panel.id)}
+              aria-expanded={isOpen}
+              aria-controls={`panel-${panel.id}`}
+              id={`toggle-${panel.id}`}
+            >
+              <span className="dc-panels__icon" aria-hidden="true">
+                <i className={panel.iconClass}></i>
+              </span>
+              <span className="dc-panels__heading">{panel.heading}</span>
+              <span className="dc-panels__chevron" aria-hidden="true">
+                <i className="fas fa-chevron-left"></i>
+              </span>
+            </button>
+            <div 
+              id={`panel-${panel.id}`}
+              role="region"
+              aria-labelledby={`toggle-${panel.id}`}
+              className="dc-panels__content"
+              style={{ maxHeight: isOpen ? '500px' : '0' }}
+              hidden={!isOpen}
+            >
+              <div className="dc-panels__body">
+                {panel.body}
+              </div>
             </div>
-          </div>
-        </div>
-      ))}
-    </div>
+          </article>
+        )
+      })}
+    </section>
   )
 }
 

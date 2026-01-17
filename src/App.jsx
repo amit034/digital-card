@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useParams, Navigate, Link } from 'react-router-dom'
-import HeroSection from './components/HeroSection'
+import BannerSection from './components/BannerSection'
 import ProfileSection from './components/ProfileSection'
 import NameSection from './components/NameSection'
 import ActionButtons from './components/ActionButtons'
@@ -26,12 +26,12 @@ function CardView({ cardData }) {
   const shareUrl = `${baseUrl}/cards/${cardData.slug}/`
 
   return (
-    <div className="app">
-      <div className="card-container">
-        <HeroSection heroImage={cardData.heroImage} />
+    <div className="dc-app">
+      <article className="dc-card">
+        <BannerSection heroImage={cardData.heroImage} />
         <ProfileSection profileImage={cardData.profileImage} />
         
-        <div className="content-section">
+        <main className="dc-main">
           <NameSection name={cardData.name} title={cardData.title} />
           <ActionButtons 
             contact={cardData} 
@@ -49,7 +49,7 @@ function CardView({ cardData }) {
             title={cardData.sectionTitles.address}
             buttonLabel={cardData.buttons.wazeNavigate}
           />
-        </div>
+        </main>
 
         <FooterSection 
           gallery={cardData.gallery} 
@@ -59,7 +59,7 @@ function CardView({ cardData }) {
           onClick={() => setIsShareModalOpen(true)} 
           label={cardData.buttons.share}
         />
-      </div>
+      </article>
 
       <ShareModal 
         isOpen={isShareModalOpen} 
@@ -94,37 +94,37 @@ function HomePage() {
   const cards = getAllCards()
   
   return (
-    <div className="app">
-      <div className="home-container">
-        <div className="home-header">
-          <div className="home-logo">
-            <span className="logo-icon">△</span>
+    <div className="dc-app">
+      <section className="dc-home">
+        <header className="dc-home__header">
+          <div className="dc-home__logo">
+            <span className="dc-home__icon">△</span>
             <h1>דלתא</h1>
             <p>בית לתכנון פיננסי</p>
           </div>
-        </div>
+        </header>
         
-        <div className="cards-grid">
-          <h2>הצוות שלנו</h2>
-          <div className="team-cards">
+        <nav className="dc-team" aria-label="Team members">
+          <h2 className="dc-team__heading">הצוות שלנו</h2>
+          <div className="dc-team__grid">
             {cards.map((card) => (
               <Link 
                 key={card.slug} 
                 to={`/${card.slug}`}
-                className="team-card"
+                className="dc-team__member"
               >
-                <div className="team-card-image">
+                <figure className="dc-team__photo">
                   <img src={getAssetUrl(card.profileImage)} alt={card.name} />
-                </div>
-                <div className="team-card-info">
+                </figure>
+                <div className="dc-team__info">
                   <h3>{card.name}</h3>
                   <p>{card.title}</p>
                 </div>
               </Link>
             ))}
           </div>
-        </div>
-      </div>
+        </nav>
+      </section>
     </div>
   )
 }

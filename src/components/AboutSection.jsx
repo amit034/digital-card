@@ -2,19 +2,19 @@ import './AboutSection.css'
 
 function AboutSection({ about, title = 'קצת עלי' }) {
   return (
-    <div className="about-section">
-      <h3 className="section-title">
-        <span className="title-icon">
+    <article className="dc-bio">
+      <header className="dc-bio__header">
+        <span className="dc-bio__icon" aria-hidden="true">
           <i className="fas fa-user"></i>
         </span>
-        {title}
-      </h3>
-      <div className="about-content">
+        <h2 className="dc-bio__title">{title}</h2>
+      </header>
+      <div className="dc-bio__body">
         {about.map((paragraph, index) => (
           <p key={index} dangerouslySetInnerHTML={{ __html: paragraph }} />
         ))}
       </div>
-    </div>
+    </article>
   )
 }
 

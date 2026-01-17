@@ -23,16 +23,23 @@ END:VCARD`
     URL.revokeObjectURL(url)
   }
 
-  const label = contact.buttons?.saveContact || 'שמירת איש קשר'
+  const text = contact.buttons?.saveContact || 'שמירת איש קשר'
 
   return (
-    <button className="save-contact-btn" onClick={downloadVCard}>
-      <span className="btn-glow"></span>
-      <span className="btn-content">
-        <i className="fas fa-address-card"></i>
-        <span>{label}</span>
-      </span>
-    </button>
+    <div className="dc-cta">
+      <button 
+        type="button" 
+        className="dc-cta__button" 
+        onClick={downloadVCard}
+        aria-label={text}
+      >
+        <span className="dc-cta__shine" aria-hidden="true"></span>
+        <span className="dc-cta__inner">
+          <i className="fas fa-address-card" aria-hidden="true"></i>
+          <span className="dc-cta__label">{text}</span>
+        </span>
+      </button>
+    </div>
   )
 }
 
