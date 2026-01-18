@@ -31,6 +31,11 @@
   }
 }
 
+/* ===== DC-PROFILE-AREA (Profile + Save Button Container) ===== */
+.dc-profile-area {
+  position: relative;
+}
+
 /* ===== DC-MAIN (Content Section) ===== */
 .dc-main {
   position: relative;

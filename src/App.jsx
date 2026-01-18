@@ -29,15 +29,15 @@ function CardView({ cardData }) {
     <div className="dc-app">
       <article className="dc-card">
         <BannerSection heroImage={cardData.heroImage} />
+        <SaveContactButton contact={cardData} />
+        <NameSection name={cardData.name} title={cardData.title} />
         <ProfileSection profileImage={cardData.profileImage} />
         
         <main className="dc-main">
-          <NameSection name={cardData.name} title={cardData.title} />
           <ActionButtons 
             contact={cardData} 
             onScheduleClick={() => setIsContactFormOpen(true)}
           />
-          <SaveContactButton contact={cardData} />
           <AboutSection 
             about={cardData.about} 
             title={cardData.sectionTitles.about} 

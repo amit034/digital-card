@@ -1,7 +1,7 @@
 /* ===== DC-COVER (Banner) ===== */
 .dc-cover {
   position: relative;
-  height: 340px;
+  height: 350px;
   overflow: hidden;
 }
 
@@ -122,6 +122,6 @@
 
 @media (max-width: 480px) {
   .dc-cover {
-    height: 230px;
+    height: 280px;
   }
 }

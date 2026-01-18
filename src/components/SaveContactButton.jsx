@@ -35,7 +35,7 @@ END:VCARD`
       >
         <span className="dc-cta__shine" aria-hidden="true"></span>
         <span className="dc-cta__inner">
-          <i className="fas fa-address-card" aria-hidden="true"></i>
+          <i className="fas fa-address-book" aria-hidden="true"></i>
           <span className="dc-cta__label">{text}</span>
         </span>
       </button>

@@ -31,27 +31,6 @@ function ActionButtons({ contact, onScheduleClick }) {
       text: labels.email || 'מייל',
       action: () => window.location.href = `mailto:${contact.email}`,
       order: 4
-    },
-    {
-      id: 'navigate',
-      icon: 'fas fa-location-dot',
-      text: labels.navigate || 'ניווט',
-      action: () => window.open(contact.wazeLink, '_blank'),
-      order: 5
-    },
-    {
-      id: 'office',
-      icon: 'fas fa-building',
-      text: labels.office || 'משרד',
-      action: () => window.location.href = `tel:${contact.office.replace(/-/g, '')}`,
-      order: 6
-    },
-    {
-      id: 'website',
-      icon: 'fas fa-globe',
-      text: labels.website || 'אתר',
-      action: () => window.open(contact.website, '_blank'),
-      order: 7
     }
   ]
 

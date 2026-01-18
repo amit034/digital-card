@@ -6,12 +6,6 @@ function FooterSection({ gallery, footer }) {
   
   return (
     <footer className="dc-footer" role="contentinfo">
-      <div className="dc-footer__wave" aria-hidden="true">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M0,0 C300,100 900,100 1200,0 L1200,120 L0,120 Z" fill="currentColor"></path>
-        </svg>
-      </div>
-      
       <div className="dc-footer__inner">
         <div className="dc-footer__brand">
           <span className="dc-footer__tag">{brand.badge}</span>

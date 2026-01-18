@@ -1,65 +1,46 @@
-/* ===== DC-IDENTITY (Name) ===== */
+/* ===== DC-IDENTITY (Name) - Above Profile ===== */
 .dc-identity {
+  position: relative;
+  z-index: 25;
   text-align: center;
-  margin-bottom: 32px;
+  margin-top: -300px;
+  margin-bottom: 16px;
+  padding: 0 20px;
   animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
 .dc-identity__name {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 8px;
+  color: white;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 6px;
   letter-spacing: 1px;
   line-height: 1.2;
 }
 
 .dc-identity__role {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
-  color: var(--text-secondary);
-  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0;
 }
 
 .dc-identity__separator {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  opacity: 0;
-  animation: fadeIn 0.6s ease-out 0.8s forwards;
-}
-
-.dc-identity__line {
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, 
-    transparent 0%, 
-    var(--accent-primary) 50%, 
-    transparent 100%
-  );
-}
-
-.dc-identity__symbol {
-  width: 8px;
-  height: 8px;
-  background: var(--accent-primary);
-  transform: rotate(45deg);
+  display: none; /* Hide separator in new layout */
 }
 
 @media (max-width: 480px) {
+  .dc-identity {
+    margin-top: -50px;
+  }
+  
   .dc-identity__name {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .dc-identity__role {
-    font-size: 1rem;
-  }
-  
-  .dc-identity__line {
-    width: 40px;
+    font-size: 0.9rem;
   }
 }

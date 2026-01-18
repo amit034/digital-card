@@ -20,6 +20,14 @@ const cards = [
     company: 'דלתא - בית לתכנון פיננסי',
     description: 'יעל אמור, בעלת תואר ראשון בכלכלה וניהול ובעלת רישיון פנסיוני מטעם משרד האוצר. עם ניסיון של כ־10 שנים בעולם הביטוח, הפנסיה והתכנון הפיננסי.',
     image: 'cards/yael-amor/profile.png'
+  },
+  {
+    slug: 'bat-el-sne',
+    name: 'בת אל סנה',
+    title: 'מתכננת פיננסית ופנסיונית',
+    company: 'דלתא - בית לתכנון פיננסי',
+    description: 'בת אל סנה, בעלת תואר BA במנהל עסקים וביטוח, בעלת רישיון פנסיוני מטעם משרד האוצר. עם ניסיון של למעלה מ-7 שנות ניהול תיקי לקוחות בבתי השקעות המובילים בישראל.',
+    image: 'cards/bat-el-sne/profile.png'
   }
 ]
 
@@ -73,7 +81,16 @@ function generateHtml(card, templateHtml) {
     `<meta name="theme-color" content="#0f172a" />${metaTags}`
   )
   
-  // No redirect script needed - React app detects the path automatically
+  // Add script to redirect to hash route
+  const redirectScript = `
+    <script>
+      // Redirect to hash route for this person
+      if (!window.location.hash) {
+        window.location.hash = '/${card.slug}';
+      }
+    </script>
+  `
+  html = html.replace('</head>', `${redirectScript}</head>`)
   
   return html
 }
