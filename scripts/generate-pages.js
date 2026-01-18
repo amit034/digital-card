@@ -23,7 +23,7 @@ const cards = [
   }
 ]
 
-const BASE_URL = 'https://amit034.github.io/digital-card'
+const BASE_URL = '/'
 
 function generateMetaTags(card) {
   const fullTitle = `${card.name} | ${card.title} • ${card.company}`
