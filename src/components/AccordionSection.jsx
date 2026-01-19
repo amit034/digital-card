@@ -30,10 +30,6 @@ function AccordionSection({ contact }) {
               <dt>אימייל:</dt>
               <dd><a href={`mailto:${contact.email}`}>{contact.email}</a></dd>
             </div>
-            <div className="dc-panel__row">
-              <dt>אתר:</dt>
-              <dd><a href={`website:${contact.website}`}>{contact.website}</a></dd>
-            </div>
           </dl>
           <div className="dc-panel__hours">
             <span className="dc-panel__clock" aria-hidden="true"><i className="fas fa-clock"></i></span>

@@ -31,6 +31,13 @@ function ActionButtons({ contact, onScheduleClick }) {
       text: labels.email || 'מייל',
       action: () => window.location.href = `mailto:${contact.email}`,
       order: 4
+    },
+    {
+      id: 'website',
+      icon: 'fas fa-globe',
+      text: labels.website || 'אתר',
+      action: () => window.open(contact.website, '_blank'),
+      order: 5
     }
   ]
 
