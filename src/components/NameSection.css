@@ -32,9 +32,6 @@
 }
 
 @media (max-width: 480px) {
-  .dc-identity {
-    margin-top: -50px;
-  }
   
   .dc-identity__name {
     font-size: 1.8rem;

@@ -113,8 +113,7 @@
 
 @media (max-width: 480px) {
   .dc-avatar {
-    margin-top: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 55px;
   }
   
   .dc-avatar__photo {
