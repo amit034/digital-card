@@ -18,13 +18,13 @@ function ActionButtons({ contact, onScheduleClick }) {
       action: () => window.open(`https://wa.me/${contact.whatsapp}`, '_blank'),
       order: 2
     },
-    {
-      id: 'meeting',
-      icon: 'fas fa-calendar-check',
-      text: labels.schedule || 'פגישה',
-      action: onScheduleClick,
-      order: 3
-    },
+    // {
+    //   id: 'meeting',
+    //   icon: 'fas fa-calendar-check',
+    //   text: labels.schedule || 'פגישה',
+    //   action: onScheduleClick,
+    //   order: 3
+    // },
     {
       id: 'email',
       icon: 'fas fa-envelope',
