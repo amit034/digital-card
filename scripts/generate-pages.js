@@ -35,7 +35,7 @@ function generateMetaTags(card) {
     <meta name="description" content="${card.description}" />
     
     <!-- Open Graph -->
-    <meta property="og:type" content="profile" />
+    <meta property="og:type" content="website">
     <meta property="og:site_name" content="Digital Cards" />
     <meta property="og:title" content="${fullTitle}" />
     <meta property="og:description" content="${card.description}" />
