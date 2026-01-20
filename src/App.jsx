@@ -22,7 +22,7 @@ function CardView({ cardData }) {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false)
 
   // Build the static share URL (for social media with meta tags)
-  const baseUrl = 'https://www.e-cards.co.il'
+  const baseUrl = 'https://e-cards.co.il'
   const shareUrl = `${baseUrl}/cards/${cardData.slug}/`
 
   return (
