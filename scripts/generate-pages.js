@@ -19,15 +19,7 @@ const cards = [
     title: 'מתכננת פיננסית ופנסיונית',
     company: 'דלתא - בית לתכנון פיננסי',
     description: 'יעל אמור, בעלת תואר ראשון בכלכלה וניהול ובעלת רישיון פנסיוני מטעם משרד האוצר. עם ניסיון של כ־10 שנים בעולם הביטוח, הפנסיה והתכנון הפיננסי.',
-    image: 'cards/yael-amor/profile.png'
-  },
-  {
-    slug: 'bat-el-sne',
-    name: 'בת אל סנה',
-    title: 'מתכננת פיננסית ופנסיונית',
-    company: 'דלתא - בית לתכנון פיננסי',
-    description: 'בת אל סנה, בעלת תואר BA במנהל עסקים וביטוח, בעלת רישיון פנסיוני מטעם משרד האוצר. עם ניסיון של למעלה מ-7 שנות ניהול תיקי לקוחות בבתי השקעות המובילים בישראל.',
-    image: 'cards/bat-el-sne/profile.png'
+    image: 'https://www.e-cards.co.il/cards/yael-amor/profile.png'
   }
 ]
 
@@ -48,7 +40,7 @@ function generateMetaTags(card) {
     <meta property="og:site_name" content="Digital Cards" />
     <meta property="og:title" content="${fullTitle}" />
     <meta property="og:description" content="${card.description}" />
-    <meta property="og:image" content="${imageUrl}" />
+    <meta property="og:image" content="${card.image}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="1200" />
     <meta property="og:image:type" content="image/png" />
@@ -59,7 +51,7 @@ function generateMetaTags(card) {
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="${fullTitle}" />
     <meta name="twitter:description" content="${card.description}" />
-    <meta name="twitter:image" content="${imageUrl}" />
+    <meta name="twitter:image" content="${card.image}" />
 `
 }
 
