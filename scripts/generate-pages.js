@@ -74,15 +74,15 @@ function generateHtml(card, templateHtml) {
   )
   
   // Add script to redirect to hash route
-  const redirectScript = `
-    <script>
-      // Redirect to hash route for this person
-      if (!window.location.hash) {
-        window.location.hash = '/${card.slug}';
-      }
-    </script>
-  `
-  html = html.replace('</head>', `${redirectScript}</head>`)
+  // const redirectScript = `
+  //   <script>
+  //     // Redirect to hash route for this person
+  //     if (!window.location.hash) {
+  //       window.location.hash = '/${card.slug}';
+  //     }
+  //   </script>
+  // `
+  // html = html.replace('</head>', `${redirectScript}</head>`)
   
   return html
 }
