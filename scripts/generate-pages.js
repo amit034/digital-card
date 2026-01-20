@@ -19,7 +19,7 @@ const cards = [
     title: 'מתכננת פיננסית ופנסיונית',
     company: 'דלתא - בית לתכנון פיננסי',
     description: 'יעל אמור, בעלת תואר ראשון בכלכלה וניהול ובעלת רישיון פנסיוני מטעם משרד האוצר. עם ניסיון של כ־10 שנים בעולם הביטוח, הפנסיה והתכנון הפיננסי.',
-    image: 'https://www.e-cards.co.il/cards/yael-amor/profile.png'
+    image: 'https://www.e-cards.co.il/cards/yael-amor/profile1.png'
   }
 ]
 
