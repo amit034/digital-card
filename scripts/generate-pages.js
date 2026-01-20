@@ -19,11 +19,11 @@ const cards = [
     title: 'מתכננת פיננסית ופנסיונית',
     company: 'דלתא - בית לתכנון פיננסי',
     description: 'יעל אמור, בעלת תואר ראשון בכלכלה וניהול ובעלת רישיון פנסיוני מטעם משרד האוצר. עם ניסיון של כ־10 שנים בעולם הביטוח, הפנסיה והתכנון הפיננסי.',
-    image: 'https://www.e-cards.co.il/cards/yael-amor/profile-og.png'
+    image: 'https://e-cards.co.il/cards/yael-amor/profile-og.png'
   }
 ]
 
-const BASE_URL = 'https://www.e-cards.co.il'
+const BASE_URL = 'https://e-cards.co.il'
 
 function generateMetaTags(card) {
   const fullTitle = `${card.name} | ${card.title} • ${card.company}`
