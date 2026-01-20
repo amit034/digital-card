@@ -49,8 +49,9 @@ function generateMetaTags(card) {
     <meta property="og:title" content="${fullTitle}" />
     <meta property="og:description" content="${card.description}" />
     <meta property="og:image" content="${imageUrl}" />
-    <meta property="og:image:width" content="400" />
-    <meta property="og:image:height" content="400" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:url" content="${pageUrl}" />
     <meta property="og:locale" content="he_IL" />
     
