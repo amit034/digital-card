@@ -31,7 +31,7 @@ const cards = [
   }
 ]
 
-const BASE_URL = ''
+const BASE_URL = 'https://www.e-cards.co.il'
 
 function generateMetaTags(card) {
   const fullTitle = `${card.name} | ${card.title} • ${card.company}`
