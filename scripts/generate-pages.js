@@ -19,7 +19,7 @@ const cards = [
     title: 'מתכננת פיננסית ופנסיונית',
     company: 'דלתא - בית לתכנון פיננסי',
     description: 'יעל אמור, בעלת תואר ראשון בכלכלה וניהול ובעלת רישיון פנסיוני מטעם משרד האוצר. עם ניסיון של כ־10 שנים בעולם הביטוח, הפנסיה והתכנון הפיננסי.',
-    image: 'https://www.e-cards.co.il/cards/yael-amor/profile.png'
+    image: 'https://www.e-cards.co.il/cards/yael-amor/profile-og.png'
   }
 ]
 
@@ -27,7 +27,6 @@ const BASE_URL = 'https://www.e-cards.co.il'
 
 function generateMetaTags(card) {
   const fullTitle = `${card.name} | ${card.title} • ${card.company}`
-  const imageUrl = `${BASE_URL}/${card.image}`
   const pageUrl = `${BASE_URL}/cards/${card.slug}/`
   
   return `
@@ -48,7 +47,7 @@ function generateMetaTags(card) {
     <meta property="og:locale" content="he_IL" />
     
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${fullTitle}" />
     <meta name="twitter:description" content="${card.description}" />
     <meta name="twitter:image" content="${card.image}" />
@@ -116,4 +115,3 @@ async function main() {
 }
 
 main()
-
