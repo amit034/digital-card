@@ -33,20 +33,36 @@ const cards = [
 
 const BASE_URL = 'https://e-cards.co.il'
 
+// Escape HTML entities for use in HTML attributes
+function escapeHtml(text) {
+  if (!text) return ''
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+}
+
 function generateMetaTags(card) {
   const fullTitle = `${card.name} | ${card.title} • ${card.company}`
   const pageUrl = `${BASE_URL}/cards/${card.slug}/`
   
+  // Escape all text content for HTML attributes
+  const escapedTitle = escapeHtml(fullTitle)
+  const escapedDescription = escapeHtml(card.description)
+  const escapedName = escapeHtml(card.name)
+  
   return `
-    <!-- Dynamic Meta Tags for ${card.name} -->
-    <title>${fullTitle}</title>
-    <meta name="description" content="${card.description}" />
+    <!-- Dynamic Meta Tags for ${escapedName} -->
+    <title>${escapedTitle}</title>
+    <meta name="description" content="${escapedDescription}" />
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Digital Cards" />
-    <meta property="og:title" content="${fullTitle}" />
-    <meta property="og:description" content="${card.description}" />
+    <meta property="og:title" content="${escapedTitle}" />
+    <meta property="og:description" content="${escapedDescription}" />
     <meta property="og:image" content="${card.image}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="1200" />
@@ -56,8 +72,8 @@ function generateMetaTags(card) {
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${fullTitle}" />
-    <meta name="twitter:description" content="${card.description}" />
+    <meta name="twitter:title" content="${escapedTitle}" />
+    <meta name="twitter:description" content="${escapedDescription}" />
     <meta name="twitter:image" content="${card.image}" />
 `
 }
