@@ -23,11 +23,11 @@ const cardData = {
   title: 'אייל פלשן ושות\' - משרד עורכי דין',
   
   // ===== CONTACT DETAILS =====
-  phone: '053-777997730',
+  phone: '052-222-3922',
   office: '03-5652088',
   email: 'eyal@flashenlaw.com',
   website: 'https://flashenlaw.com',
-  whatsapp: '053-777997730',
+  whatsapp: '052-222-3922',
   
   // ===== IMAGES =====
   profileImage: `${PROFILE_PATH}/profile.png`,
