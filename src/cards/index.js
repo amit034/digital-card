@@ -6,10 +6,12 @@
  */
 
 import yaelAmor from './yael-amor'
+import eyalFlashen from './eyal-flashen'
 
 // Register all cards by their slug
 const cards = {
   'yael-amor': yaelAmor,
+  'eyal-flashen': eyalFlashen,
 }
 
 // Get card by slug

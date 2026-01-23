@@ -5,15 +5,12 @@
  * 
  * Personal images: public/cards/yael-amor/
  *   - profile.png (profile photo)
- * 
- * Shared images: public/cards/shared/
- *   - delta-hero.png (header background)
- *   - office-team.jpg, consultation.jpg, etc. (gallery)
+ *   - hero.png (header background)
+ *   - gallery-1.jpg through gallery-4.jpg (gallery images)
  */
 
 // Paths for assets
 const PROFILE_PATH = 'cards/yael-amor'
-const SHARED_PATH = 'cards/shared'
 
 const cardData = {
   // ===== ROUTE SLUG =====
@@ -34,7 +31,7 @@ const cardData = {
   
   // ===== IMAGES =====
   profileImage: `${PROFILE_PATH}/profile.png`,
-  heroImage: `${SHARED_PATH}/delta-hero.png`,
+  heroImage: `${PROFILE_PATH}/hero.png`,
   
   // ===== ADDRESS =====
   address: {
@@ -70,12 +67,12 @@ const cardData = {
     'האם התיק הפיננסי שלכם מתאים לשלב החיים הנוכחי?'
   ],
   
-  // ===== GALLERY IMAGES (shared) =====
+  // ===== GALLERY IMAGES =====
   gallery: [
-    `${SHARED_PATH}/office-team.jpg`,
-    `${SHARED_PATH}/consultation.jpg`,
-    `${SHARED_PATH}/meeting-room.jpg`,
-    `${SHARED_PATH}/workspace.jpg`
+    `${PROFILE_PATH}/gallery-1.jpg`,
+    `${PROFILE_PATH}/gallery-2.jpg`,
+    `${PROFILE_PATH}/gallery-3.jpg`,
+    `${PROFILE_PATH}/gallery-4.jpg`
   ],
   
   // ===== FOOTER SECTION =====
