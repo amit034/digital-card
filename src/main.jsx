@@ -5,7 +5,7 @@ import { DynamicCard, CardView } from './App.jsx'
 import { getCard, defaultCard } from './cards'
 import './index.css'
 
-// Register Service Worker for PWA
+// Register Service Worker for PWA (required for "Add to Home Screen" menu option)
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js')
@@ -17,6 +17,16 @@ if ('serviceWorker' in navigator) {
       })
   })
 }
+
+// Prevent automatic install prompt (user will use 3-dots menu instead)
+let deferredPrompt
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent the automatic prompt
+  e.preventDefault()
+  // Store the event for manual triggering if needed later
+  deferredPrompt = e
+  console.log('Install prompt prevented - use browser menu instead')
+})
 
 // Check if we're on a /cards/{slug}/ path
 const getSlugFromPath = () => {
