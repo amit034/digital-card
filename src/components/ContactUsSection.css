@@ -1,0 +1,226 @@
+/* ===== DC-CONTACT-US ===== */
+.dc-contact-us {
+  background: var(--gradient-glass);
+  border: var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.8s ease-out 1.4s both;
+}
+
+.dc-contact-us__header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.dc-contact-us__icon {
+  width: 64px;
+  height: 64px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  box-shadow: var(--shadow-glow);
+}
+
+.dc-contact-us__icon i {
+  font-size: 1.75rem;
+  color: white;
+}
+
+.dc-contact-us__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.dc-contact-us__subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* Form */
+.dc-contact-us__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dc-contact-us__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dc-contact-us__field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.dc-contact-us__field input,
+.dc-contact-us__field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--bg-primary);
+  border: var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.dc-contact-us__field input::placeholder,
+.dc-contact-us__field textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.dc-contact-us__field input:focus,
+.dc-contact-us__field textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.1);
+}
+
+.dc-contact-us__field input:disabled,
+.dc-contact-us__field textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dc-contact-us__field input[type="tel"] {
+  text-align: left;
+  direction: ltr;
+}
+
+.dc-contact-us__field textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+/* Error Message */
+.dc-contact-us__error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+}
+
+.dc-contact-us__error i {
+  font-size: 1rem;
+}
+
+/* Success Message */
+.dc-contact-us__success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.dc-contact-us__success i {
+  font-size: 1.1rem;
+}
+
+/* Submit Button */
+.dc-contact-us__submit {
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.dc-contact-us__submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.dc-contact-us__submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.dc-contact-us__submit i {
+  font-size: 1rem;
+}
+
+/* Footer */
+.dc-contact-us__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: var(--border-subtle);
+}
+
+.dc-contact-us__footer i {
+  color: var(--accent-secondary);
+  font-size: 0.9rem;
+}
+
+.dc-contact-us__footer span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 480px) {
+  .dc-contact-us {
+    padding: 24px 20px;
+  }
+  
+  .dc-contact-us__icon {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .dc-contact-us__icon i {
+    font-size: 1.5rem;
+  }
+  
+  .dc-contact-us__title {
+    font-size: 1.25rem;
+  }
+  
+  .dc-contact-us__field input,
+  .dc-contact-us__field textarea {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+  
+  .dc-contact-us__submit {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+}

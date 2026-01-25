@@ -12,6 +12,7 @@ import FooterSection from './components/FooterSection'
 import ShareButton from './components/ShareButton'
 import ShareModal from './components/ShareModal'
 import ContactForm from './components/ContactForm'
+import ContactUsSection from './components/ContactUsSection'
 import { getCard, defaultCard, getAllCards } from './cards'
 import { getAssetUrl } from './utils/assets'
 import './App.css'
@@ -49,6 +50,9 @@ function CardView({ cardData }) {
             title={cardData.sectionTitles.address}
             buttonLabel={cardData.buttons.wazeNavigate}
           />
+          {cardData.googleScriptUrl && (
+            <ContactUsSection googleScriptUrl={cardData.googleScriptUrl} />
+          )}
         </main>
 
         <FooterSection 

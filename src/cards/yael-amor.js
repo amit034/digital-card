@@ -29,6 +29,10 @@ const cardData = {
   website: 'https://delta-ins.co.il',
   whatsapp: '9720528238675',
   
+  // ===== GOOGLE SHEETS INTEGRATION =====
+  // Uncomment and add your Google Apps Script URL after setting up (see GOOGLE_SHEETS_SETUP.md)
+  // googleScriptUrl: 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec',
+  
   // ===== IMAGES =====
   profileImage: `${PROFILE_PATH}/profile.png`,
   heroImage: `${PROFILE_PATH}/hero.png`,

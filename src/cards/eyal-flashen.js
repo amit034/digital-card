@@ -29,6 +29,10 @@ const cardData = {
   website: 'https://flashenlaw.com',
   whatsapp: '052-222-3922',
   
+  // ===== GOOGLE SHEETS INTEGRATION =====
+  // Uncomment and add your Google Apps Script URL after setting up (see GOOGLE_SHEETS_SETUP.md)
+  // googleScriptUrl: 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec',
+  
   // ===== IMAGES =====
   profileImage: `${PROFILE_PATH}/profile.png`,
   heroImage: `https://flashenlaw.com/wp-content/uploads/2023/05/home-g63b8c2524_1280.jpg`,
