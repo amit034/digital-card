@@ -5,6 +5,19 @@ import { DynamicCard, CardView } from './App.jsx'
 import { getCard, defaultCard } from './cards'
 import './index.css'
 
+// Register Service Worker for PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then((registration) => {
+        console.log('SW registered: ', registration)
+      })
+      .catch((registrationError) => {
+        console.log('SW registration failed: ', registrationError)
+      })
+  })
+}
+
 // Check if we're on a /cards/{slug}/ path
 const getSlugFromPath = () => {
   const pathMatch = window.location.pathname.match(/\/cards\/([^/]+)\/?/)

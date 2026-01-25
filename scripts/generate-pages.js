@@ -59,6 +59,14 @@ function generateMetaTags(card) {
     <title>${escapedTitle}</title>
     <meta name="description" content="${escapedDescription}" />
     
+    <!-- PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="${escapedName}" />
+    <link rel="manifest" href="${BASE_URL}/manifest.json" />
+    <link rel="apple-touch-icon" href="${BASE_URL}/icon-192.png" />
+    
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Digital Cards" />
@@ -85,17 +93,24 @@ function generateHtml(card, templateHtml) {
     .replace(/<title>.*?<\/title>\s*/s, '')
     .replace(/<!-- Basic Meta -->\s*/g, '')
     .replace(/<meta name="description".*?\/>\s*/g, '')
+    .replace(/<!-- PWA Meta Tags -->\s*/g, '')
+    .replace(/<meta name="mobile-web-app-capable".*?\/>\s*/g, '')
+    .replace(/<meta name="apple-mobile-web-app-capable".*?\/>\s*/g, '')
+    .replace(/<meta name="apple-mobile-web-app-status-bar-style".*?\/>\s*/g, '')
+    .replace(/<meta name="apple-mobile-web-app-title".*?\/>\s*/g, '')
+    .replace(/<link rel="manifest".*?\/>\s*/g, '')
+    .replace(/<link rel="apple-touch-icon".*?\/>\s*/g, '')
     .replace(/<!-- Open Graph \/ Facebook -->\s*/g, '')
     .replace(/<meta property="og:.*?\/>\s*/g, '')
     .replace(/<!-- Twitter Card -->\s*/g, '')
     .replace(/<meta name="twitter:.*?\/>\s*/g, '')
     .replace(/<meta name="author".*?\/>\s*/g, '')
   
-  // Insert new meta tags after theme-color
+  // Insert new meta tags after theme-color (update theme-color for PWA)
   const metaTags = generateMetaTags(card)
   html = html.replace(
-    '<meta name="theme-color" content="#0f172a" />',
-    `<meta name="theme-color" content="#0f172a" />${metaTags}`
+    /<meta name="theme-color" content="[^"]*" \/>/,
+    `<meta name="theme-color" content="#818cf8" />${metaTags}`
   )
   
   // Add script to redirect to hash route

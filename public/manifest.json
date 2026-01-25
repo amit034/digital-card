@@ -1,0 +1,30 @@
+{
+  "name": "כרטיס ביקור דיגיטלי",
+  "short_name": "Digital Cards",
+  "description": "כרטיס ביקור דיגיטלי מתקדם - שמור את פרטי הקשר בלחיצה אחת",
+  "start_url": "https://e-cards.co.il/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#818cf8",
+  "orientation": "portrait-primary",
+  "scope": "https://e-cards.co.il/",
+  "lang": "he",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "https://e-cards.co.il/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://e-cards.co.il/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "screenshots": [],
+  "shortcuts": []
+}
